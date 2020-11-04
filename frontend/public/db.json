@@ -1,0 +1,74 @@
+{
+  "tweets": [
+    {
+      "id": 1,
+      "_id": "25f9556917b326dc67a8558f3",
+      "text": "Вітаю з професійним святом працівників автомобільного транспорту та дорожнього господарства України. \n\nЩодня ви робите непросту та дуже важливу справу – ви з’єднуєте Україну. Зводите мости між українцями та робите нас ближчими одне до одного.",
+      "user": {
+        "fullname": "Володимир Зеленський",
+        "username": "@ZelenskyyUa",
+        "avatarUrl": "https://pbs.twimg.com/profile_images/1215070700026855425/7edvU72D_200x200.jpg"
+      }
+    },
+    {
+      "id": 2,
+      "_id": "15f955691956480c86134de96",
+      "text": "Pariatur commodo ad ipsum velit. Lorem Lorem ipsum nisi aliquip adipisicing est duis do magna sit exercitation. Consectetur fugiat nulla sunt ea adipisicing aute do quis est magna nostrud excepteur. Sunt sit nostrud mollit laborum sint consequat et elit. Enim consectetur sint qui adipisicing.",
+      "user": {
+        "fullname": "Hawkins Merrill",
+        "username": "barrett",
+        "avatarUrl": "https://source.unsplash.com/random/100x100?2"
+      }
+    },
+    {
+      "_id": "ruouy1sxbwg",
+      "text": "32131",
+      "user": {
+        "fullname": "Володимир Зеленський",
+        "username": "@ZelenskyyUa",
+        "avatarUrl": "https://pbs.twimg.com/profile_images/1215070700026855425/7edvU72D_200x200.jpg"
+      },
+      "id": 3
+    }
+  ],
+  "tags": [
+    {
+      "_id": "15f955691bf23qewqeba4209abdd31",
+      "name": "#корона",
+      "count": 123
+    },
+    {
+      "_id": "15f955691bf24214213ba4209abdd32",
+      "name": "КНУ",
+      "count": 32
+    },
+    {
+      "_id": "15f955691bf2wqewq3ba4209abdd33",
+      "name": "гитлер",
+      "count": 421
+    }
+  ],
+  "users": [
+    {
+      "fullname": "Hawkins Merrill",
+      "username": "barrett",
+      "avatarUrl": "https://source.unsplash.com/random/100x100?2"
+    },
+    {
+      "fullname": "Taylor Hensley",
+      "username": "alston",
+      "avatarUrl": "https://source.unsplash.com/random/100x100?3"
+    },
+    {
+      "fullname": "Cleveland Rutledge",
+      "username": "claudia",
+      "avatarUrl": "https://source.unsplash.com/random/100x100?5"
+    }
+  ],
+  "user": {
+    "_id": "15f955691bf23ba4209abdd31",
+    "fullname": "Кетрин Винник",
+    "username": "winnik",
+    "avatarUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRltgWf_zyHu8EBoX9vQ42_zzLWOp7ayRKyXg&usqp=CAU"
+  }
+}
