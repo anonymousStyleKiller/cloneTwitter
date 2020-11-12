@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand />
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ffd55cd1-6706-4ed3-8491-8eae8be7bc5d" name="Default Changelist" comment="Created Method afterLogin(), show(), getUserInfo() in User Controller">
+      <change afterPath="$PROJECT_DIR$/backend/controllers/TweetsController.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/utils/isValidObjectTS.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/validations/registerValidations.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/core/axios.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/utils/formatDate.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/controllers/UserController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/UserController.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/core/passport.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/core/passport.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models/UserModel.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/UserModel.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/server.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/validations/register.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/validations/createTweet.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/AddTweetForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/AddTweetForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/FullTweet.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/FullTweet.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Tweet.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Tweet.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Home/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Home/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/api/tweetsApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/api/tweetsApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/store/ducks/tweet/sagas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/store/ducks/tweet/sagas.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/store/ducks/tweets/contracts/state.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/store/ducks/tweets/contracts/state.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/store/ducks/tweets/sagas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/store/ducks/tweets/sagas.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/store/ducks/tweets/selectors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/store/ducks/tweets/selectors.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="tsconfig.json" />
+        <option value="package.json" />
+        <option value="JavaScript File" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/anonymousStyleKiller/cloneTwitter" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1jjBQd11Bh8gW6SQ0xaVmyViNzl" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="ToolWindowCommit.ShowToolbar" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../ProfilanceTest" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="ts.external.directory.path" value="C:\Users\Gigabyte\Desktop\Work\twitter\frontend\node_modules\typescript\lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Gigabyte\Desktop\Work\twitter\backend\controllers" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ffd55cd1-6706-4ed3-8491-8eae8be7bc5d" name="Default Changelist" comment="" />
+      <created>1604307608953</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1604307608953</updated>
+      <workItem from="1604307610653" duration="4858000" />
+      <workItem from="1604330146833" duration="903000" />
+      <workItem from="1604334970831" duration="4622000" />
+      <workItem from="1604377319505" duration="2994000" />
+      <workItem from="1604381484147" duration="16861000" />
+      <workItem from="1604418987321" duration="1985000" />
+      <workItem from="1604471396355" duration="15959000" />
+      <workItem from="1604555748440" duration="327000" />
+      <workItem from="1604556084919" duration="8542000" />
+      <workItem from="1604571069126" duration="4181000" />
+      <workItem from="1604581338538" duration="6950000" />
+      <workItem from="1604645196562" duration="7839000" />
+      <workItem from="1604655289517" duration="11639000" />
+      <workItem from="1604723445697" duration="3387000" />
+      <workItem from="1604764682226" duration="1594000" />
+      <workItem from="1604807507971" duration="8387000" />
+      <workItem from="1604825984896" duration="6232000" />
+      <workItem from="1604838863347" duration="2497000" />
+      <workItem from="1604896881287" duration="2449000" />
+      <workItem from="1604993790505" duration="5541000" />
+    </task>
+    <task id="LOCAL-00001" summary="Created Method afterLogin(), show(), getUserInfo() in User Controller">
+      <created>1604652137254</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1604652137255</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Created Method afterLogin(), show(), getUserInfo() in User Controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created Method afterLogin(), show(), getUserInfo() in User Controller" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="537" y="283" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604725880950">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="537" y="283" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1010@0.0.1680.1010" timestamp="1604725880950" />
+    <state x="598" y="151" key="#com.intellij.ide.util.MemberChooser" timestamp="1604478152813">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="598" y="151" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1010@0.0.1680.1010" timestamp="1604478152813" />
+    <state x="348" y="0" key="CommitChangelistDialog2" timestamp="1604655369768">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="348" y="0" key="CommitChangelistDialog2/0.0.1680.1010@0.0.1680.1010" timestamp="1604655369768" />
+    <state x="160" y="82" key="DiffContextDialog" timestamp="1604481965167">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="160" y="82" key="DiffContextDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1604481965167" />
+    <state x="567" y="201" key="FileChooserDialogImpl" timestamp="1605004778793">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="567" y="201" key="FileChooserDialogImpl/0.0.1680.1010@0.0.1680.1010" timestamp="1605004778793" />
+    <state x="604" y="402" key="Github.CreateGistDialog" timestamp="1604481678102">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="604" y="402" key="Github.CreateGistDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1604481678102" />
+    <state width="1629" height="257" key="GridCell.Tab.0.bottom" timestamp="1604330108859">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1629" height="257" key="GridCell.Tab.0.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1604330108859" />
+    <state width="1629" height="257" key="GridCell.Tab.0.center" timestamp="1604330108859">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1629" height="257" key="GridCell.Tab.0.center/0.0.1680.1010@0.0.1680.1010" timestamp="1604330108859" />
+    <state width="1629" height="257" key="GridCell.Tab.0.left" timestamp="1604330108859">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1629" height="257" key="GridCell.Tab.0.left/0.0.1680.1010@0.0.1680.1010" timestamp="1604330108859" />
+    <state width="1629" height="257" key="GridCell.Tab.0.right" timestamp="1604330108859">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state width="1629" height="257" key="GridCell.Tab.0.right/0.0.1680.1010@0.0.1680.1010" timestamp="1604330108859" />
+    <state x="441" y="45" width="1239" height="927" key="SettingsEditor" timestamp="1605004769194">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="441" y="45" width="1239" height="927" key="SettingsEditor/0.0.1680.1010@0.0.1680.1010" timestamp="1605004769194" />
+    <state x="332" y="173" key="Vcs.Push.Dialog.v2" timestamp="1604652142237">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="332" y="173" key="Vcs.Push.Dialog.v2/0.0.1680.1010@0.0.1680.1010" timestamp="1604652142237" />
+    <state x="379" y="472" key="refactoring.ChangeSignatureDialog" timestamp="1604998766639">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="379" y="472" key="refactoring.ChangeSignatureDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1604998766639" />
+    <state x="412" y="229" key="run.anything.popup" timestamp="1604996678406">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="412" y="229" key="run.anything.popup/0.0.1680.1010@0.0.1680.1010" timestamp="1604996678406" />
+    <state x="419" y="0" width="840" height="1034" key="search.everywhere.popup" timestamp="1604999973585">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="419" y="0" width="840" height="1034" key="search.everywhere.popup/0.0.1680.1010@0.0.1680.1010" timestamp="1604999973585" />
+  </component>
+</project>

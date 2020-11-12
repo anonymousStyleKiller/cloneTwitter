@@ -1,6 +1,6 @@
 import * as validator from "express-validator";
 
-export const tweetsValidations = [
+export const registerValidations = [
     // email
     validator.body("email", "Введите почту").isString().isEmail()
         .withMessage("Неверная почта").isLength({

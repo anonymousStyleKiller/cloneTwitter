@@ -14,12 +14,14 @@ import PublishIcon from "@material-ui/icons/Publish";
 
 // mine
 import {useHomeStyles} from '../pages/Home/theme';
+import {formatDate} from "../utils/formatDate";
 
 
 interface ITweet {
     _id: string,
     text: string;
     classes: ReturnType<typeof useHomeStyles>;
+    createdAt: string;
     user: {
         fullname: string;
         username: string;
@@ -27,7 +29,7 @@ interface ITweet {
     };
 }
 
-const Tweet: React.FC<ITweet> = ({_id, classes, text, user}: ITweet): React.ReactElement => {
+const Tweet: React.FC<ITweet> = ({_id, createdAt, classes, text, user}: ITweet): React.ReactElement => {
     return (
         <Link className={classes.tweetWrapper} to={`/home/tweet/${_id}`}>
             <Paper className={classnames(classes.tweet, classes.tweetsHeader)} variant="outlined">
@@ -38,7 +40,7 @@ const Tweet: React.FC<ITweet> = ({_id, classes, text, user}: ITweet): React.Reac
                         <b>{user.username}</b>&nbsp;
                         <span className={classes.tweetsColor}>{user.fullname}</span>&nbsp;
                         <span className={classes.tweetsColor}>-</span>&nbsp;
-                        <span className={classes.tweetsColor}>1 ч</span>&nbsp;
+                        <span className={classes.tweetsColor}>{formatDate(new Date(createdAt))}</span>&nbsp;
                     </Typography>
                     <Typography variant="body1" gutterBottom>
                         {text}

@@ -1,16 +1,23 @@
-import axios from "axios";
-import {ITweet, ITweetState} from "../../store/ducks/tweets/contracts/state";
+import { axios } from "../../core/axios";
+import {ITweet} from "../../store/ducks/tweets/contracts/state";
+
+interface IResponse<T> {
+    status: string;
+    data: T
+}
 
 export const TweetsApi = {
-    fetchTweets(): Promise<ITweetState['items']> {
-        return axios.get("/tweets")
-            .then(({data}) => data);
+    async fetchTweets(): Promise<ITweet[]> {
+        const {data} = await axios.get<IResponse<ITweet[]>>("/tweets");
+        return data.data;
     },
-    fetchTweetData(id: string): Promise<ITweet[]> {
-        return axios.get('/tweets?_id=' + id)
-            .then(({data}) => data);
+    async fetchTweetData(id: string): Promise<ITweet> {
+        const {data} = await axios.get<IResponse<ITweet>>('/tweets/' + id);
+        return data.data;
     },
-   addTweet(payload: ITweet): Promise<ITweet> {
-        return axios.post('/tweets', payload).then(({data}) => data);
+    async addTweet(payload: string): Promise<ITweet> {
+        const {data} = await axios.post<IResponse<ITweet>>('/tweets', {text : payload});
+        console.log(data)
+        return data.data;
     }
 }

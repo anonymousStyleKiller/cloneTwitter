@@ -79,7 +79,7 @@ const Home = (): React.ReactElement => {
                                     <CircularProgress/>
                                 </div> :
                                 isTweets.map(tweet =>
-                                    <Tweet  {...tweet} key={tweet._id} classes={classes}/>
+                                    <Tweet  {...tweet} createdAt={new Date().toString()} key={tweet._id} classes={classes}/>
                                 )}
                         </Route>
                         <Route path="/home/tweet/:id" exact>

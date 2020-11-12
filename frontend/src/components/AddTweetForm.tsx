@@ -44,8 +44,7 @@ const AddTweetForm: React.FC<IAddTweetFormProps> = ({classes, maxRows}: IAddTwee
         if (e.currentTarget) {
             setText(e.currentTarget.value);
         }
-    }
-
+    };
 
     return (
         <div>
@@ -84,14 +83,14 @@ const AddTweetForm: React.FC<IAddTweetFormProps> = ({classes, maxRows}: IAddTwee
                         </>)}
                     <Button onClick={handleClickAddTweet}
                             disabled={addFormState === AddFormState.LOADING || !text || textLimit >= MAX_LENGTH}
-                            color="primary"  variant="contained">
+                            color="primary" variant="contained">
                         {addFormState === AddFormState.LOADING ?
                             <CircularProgress color="inherit" size={16}/> : "Твитнуть"}
                     </Button>
                 </div>
             </div>
             {addFormState === AddFormState.ERROR && <Alert severity="error">
-                Ошибка при добавление твита   <span role="img">😭</span>
+                Ошибка при добавление твита <span role="img" aria-label="">😭</span>
             </Alert>}
         </div>
     );

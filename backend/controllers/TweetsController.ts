@@ -1,143 +1,151 @@
-import express from "express";
-import mongoose from "mongoose";
-import jwt from "jsonwebtoken";
-import {validationResult} from "express-validator/src/validation-result";
-import {IUserModelDocument, IUserModel, UserModel} from "../models/UserModel";
-import {generateMD5} from "../utils/generateHash";
-import {sendEmail} from "../utils/sendEmail";
+import express from 'express';
+import mongoose from 'mongoose';
+import { ITweetModelDocument, TweetModel } from '../models/TweetModal';
+import { IUserModel } from '../models/UserModel';
+import { validationResult } from 'express-validator/src/validation-result';
 
 const isValidObjectId = mongoose.Types.ObjectId.isValid;
 
-class UserController {
-    // Получение всех пользователей
-    async index(_: any, res: express.Response): Promise<void> {
-        try {
-            const data = await UserModel.find({} as IUserModelDocument).exec();
-            const users = data.map(item=>item.toObject());
-            res.status(200).json({
-                status: 'success',
-                users
-            });
-
-        } catch (error) {
-            res.status(400).json({status: 'error', errors: JSON.stringify(error)});
-        }
+class TweetsController {
+  // получение всех твитов +
+  async index(_: any, res: express.Response): Promise<void> {
+    try {
+      const tweets = await TweetModel.find({}).populate('user').sort({ createdAt: 1 }).exec();
+      const arr =  tweets.map(item=> (item as ITweetModelDocument).toObject())
+      res.status(200).json({
+        status: 'success',
+        data: arr,
+      });
+    } catch (error) {
+      res.status(400).json({
+        status: 'error',
+        errors: JSON.stringify(error),
+      });
     }
+  }
 
-    // Получение одного пользователя (без пароля и хеша)
-    async show(req: express.Request, res: express.Response): Promise<void> {
-        try {
-            const userId = req.params.id;
+  // отображение одного твива +
+  async show(req: express.Request, res: express.Response): Promise<void> {
+    try {
+      const tweetId = req.params.id;
 
-            if (!isValidObjectId(userId)) {
-                res.status(403).send();
-                return;
-            }
-
-            const data = await UserModel.findById(userId).exec();
-
-            res.status(200).json({
-                status: 'success',
-                data: data?.toObject()
-            });
-
-        } catch (error) {
-            res.status(400).json({status: 'error', errors: JSON.stringify(error)});
-        }
+      if (!isValidObjectId(tweetId)) {
+        res.status(404).send();
+        return;
+      }
+      const tweet = await TweetModel.findById(tweetId).populate('user').exec();
+      res.status(200).json({
+        status: 'success',
+        data: (tweet as ITweetModelDocument).toObject(),
+      });
+    } catch (error) {
+      res.status(500).json({
+        status: 'error',
+        errors: JSON.stringify(error),
+      });
     }
+  }
 
-    // Для создания токена, после логина
-    async afterLogin(req: express.Request, res: express.Response): Promise<void> {
-        try {
-            const user = req.user ? (req.user as IUserModelDocument).toObject() : undefined;
+  // создание  твита +
+  async create(req: express.Request, res: express.Response): Promise<void> {
+    try {
+      const user = req.user as IUserModel;
+      if (user?._id) {
+        const errors = validationResult(req);
 
-            res.status(200).json({
-                status: "success",
-                data: {
-                    ...user,
-                    token: jwt.sign({data: req.user},
-                        process.env.SECRET_KEY || "secretKey",
-                        {expiresIn: "30 days"}),
-                }
-            });
-        } catch (error) {
-            res.status(400).json({status: 'error', errors: JSON.stringify(error)});
+        if (!errors.isEmpty()) {
+          res.status(400).json({
+            status: 'error',
+            errors: errors.array(),
+          });
+          return;
         }
-    }
+        // Поправить типизацию
+        const data: any = {
+          text: req.body.text,
+          user: user._id,
+        };
 
-    // получение данных по токену( если он действителен)
-    async getUserInfo(req: express.Request, res: express.Response): Promise<void> {
-        try {
-            const data = req.user ? (req.user as IUserModelDocument).toObject() : undefined;
-            res.status(200).json({status: "success", data});
-        } catch (error) {
-            res.status(400).json({status: 'error', errors: JSON.stringify(error)});
+        const tweet = await (await TweetModel.create(data)).populate('user').execPopulate();
+        res.status(200).json({
+          status: 'success',
+          data: (tweet as ITweetModelDocument).toObject(),
+        });
+      }
+    } catch (error) {
+      res.status(500).json({
+        status: 'error',
+        errors: JSON.stringify(error),
+      });
+    }
+  }
+
+  // удаление твита +
+  async delete(req: express.Request, res: express.Response): Promise<void> {
+    const user = req.user as IUserModel;
+    try {
+      if (user) {
+        const tweetId = req.params.id;
+
+        if (!isValidObjectId(tweetId)) {
+          res.status(404).send();
+          return;
         }
-    }
 
-    // Создание нового пользователя
-    async create(req: express.Request, res: express.Response): Promise<void> {
-        try {
-            const errors = validationResult(req);
-            if (!errors.isEmpty()) {
-                res.status(400).json({status: "error", errors: errors.array()});
-                return;
-            }
-            let data: IUserModel = {
-                email: req.body.email,
-                fullname: req.body.fullname,
-                username: req.body.username,
-                password: generateMD5(req.body.password + process.env.SECRET_KEY),
-                confirmHash: generateMD5(process.env.SECRET_KEY || Math.random().toString()),
-            }
+        const tweet = await TweetModel.findById(tweetId);
 
-            await UserModel.create(data);
-            res.status(200).json({
-                status: 'success', data
-            }).send();
-
-            sendEmail({
-                    emailFrom: "admin@twitter.com", emailTo: data.email,
-                    subject: "Подтверждение почты Twitter Clone Tutorial",
-                    html: `Для того что бы подтвердить почту, перейдите 
-                       <a href="http://localhost:${process.env.PORT || 8888}/auth/verify?hash=${data.confirmHash}">по этой ссылке</a>`,
-                },
-                (err: Error | null) => {
-                    if (err) {
-                        res.status(400).json({
-                            status: 'error',
-                            message: err
-                        })
-                    }
-                })
-
-        } catch (error) {
-            res.status(500).json({status: 'error', message: error})
+        if (tweet) {
+          if (String(tweet.user) === String(user._id)) {
+            tweet.remove();
+            res.send();
+          } else {
+            res.status(403).send();
+          }
+        } else {
+          res.status(404).send();
         }
+      }
+    } catch (error) {
+      res.status(500).json({
+        status: 'error',
+        errors: JSON.stringify(error),
+      });
     }
+  }
 
-    // Подтверждение через почту
-    async verify(req: any, res: express.Response): Promise<void> {
-        try {
-            const hash = req.query.hash;
-            if (!hash) {
-                res.status(400).send();
-            }
-            const user = await UserModel.findOne({confirmHash: hash}).exec();
-            if (user) {
-                user.confirmed = true;
-                user?.save();
-                res.json({
-                    status: 'success'
-                });
-            } else {
-                res.status(404).json({status: 'error', message: "Пользователь не найден!"});
-            }
+  // обновление твита +
+  async update(req: express.Request, res: express.Response): Promise<void> {
+    const user = req.user as IUserModel;
 
-        } catch (error) {
-            res.status(500).json({status: 'error', errors: JSON.stringify(error)});
+    try {
+      if (user) {
+        const tweetId = req.params.id;
+
+        if (!isValidObjectId(tweetId)) {
+          res.status(404).send();
+          return;
         }
+
+        const tweet = await TweetModel.findById(tweetId);
+
+        if (tweet) {
+          if (String(tweet.user) === String(user._id)) {
+            tweet.text = req.body.text;
+            res.send();
+          } else {
+            res.status(403).send();
+          }
+        } else {
+          res.status(404).send();
+        }
+      }
+    } catch (error) {
+      res.status(500).json({
+        status: 'error',
+        errors: JSON.stringify(error),
+      });
     }
+  }
 }
 
-export const UserCtrl = new UserController();
+export const TweetsCtrl = new TweetsController();

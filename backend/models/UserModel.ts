@@ -11,11 +11,12 @@ export interface IUserModel {
     location?: string;
     about?: string;
     website?: string;
+    token?: string;
 }
 
-export  type IUserModalDocument = IUserModel & Document;
+export  type IUserModelDocument = IUserModel & Document;
 
-const UserSchema = new Schema({
+const UserSchema = new Schema<IUserModel>({
     email:{
         unique: true,
         required: true,
@@ -45,7 +46,6 @@ const UserSchema = new Schema({
     location: String,
     about: String,
     website: String,
-
 });
 
 UserSchema.set("toJSON",{
@@ -56,4 +56,4 @@ UserSchema.set("toJSON",{
     }
 })
 
-export const UserModel = model<IUserModalDocument>('User', UserSchema);
+export const UserModel = model<IUserModelDocument>("User", UserSchema);
