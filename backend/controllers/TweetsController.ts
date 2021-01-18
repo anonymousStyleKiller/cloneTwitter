@@ -10,7 +10,8 @@ class TweetsController {
   // получение всех твитов +
   async index(_: any, res: express.Response): Promise<void> {
     try {
-      const tweets = await TweetModel.find({}).populate('user').sort({ createdAt: 1 }).exec();
+      const tweets = await TweetModel.find({})
+      .populate('user').sort({ "createdAt": "-1" }).exec();
       const arr =  tweets.map(item=> (item as ITweetModelDocument).toObject())
       res.status(200).json({
         status: 'success',

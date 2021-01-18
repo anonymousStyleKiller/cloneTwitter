@@ -89,6 +89,14 @@ export const useHomeStyles = makeStyles((theme) => ({
             backgroundColor: 'rgb(245, 248, 250)',
         }
     },
+    tweetHeader: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContend: 'space-between'
+    },
+    tweetContent:{
+      flex: 1
+    },
     tweetAvatar: {
         width: theme.spacing(6.5),
         height: theme.spacing(6.5),
